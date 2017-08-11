@@ -1,0 +1,92 @@
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  /*overflow: hidden;*/
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: .5em;
+  font-size: 1em;
+}
+
+.middle {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 100%;
+  width: 400%;
+  position: relative;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bio {
+  width: 40em;
+  height: 100%;
+  display: flex;
+  color: black;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+}
+
+.bioWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: red;
+  justify-content: center;
+}
+
+.workWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: blue;
+}
+
+.work {
+  width: 40em;
+  height: 100%;
+  display: flex;
+  color: black;
+}
+
+.contactWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: yellow;
+}
+
+.contact {
+  width: 40em;
+  height: 100%;
+  display: flex;
+  color: black;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  height: 5em;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+footer a {
+  margin: 1em;
+}
