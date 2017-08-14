@@ -11,8 +11,9 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: .5em;
+  height: 9em;
   font-size: 1em;
+  padding-left: 1em;
 }
 
 .middle {
@@ -22,6 +23,8 @@ body {
   height: 100%;
   width: 400%;
   position: relative;
+  left: 0;
+  transition: left 500ms;
 }
 
 .content {
@@ -89,4 +92,24 @@ footer {
 
 footer a {
   margin: 1em;
+}
+
+.showBio {
+  left: -100%;
+}
+
+.showWork {
+  left: -200%;
+}
+
+.showResume {
+  left: -300%;
+}
+
+.showContact {
+  left: -400%;
+}
+
+.hidden {
+  display: none;
 }
