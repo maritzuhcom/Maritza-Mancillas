@@ -4,7 +4,7 @@ body {
   display: flex;
   flex-direction: column;
   position: absolute;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 .top {
@@ -14,6 +14,14 @@ body {
   height: 9em;
   font-size: 1em;
   padding-left: 1em;
+}
+
+.name {
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .middle {
@@ -39,18 +47,14 @@ body {
   width: 40em;
   height: 100%;
   display: flex;
-  color: black;
-  flex-direction: row;
-  justify-content: space-evenly;
+  color: #fafae5;
   flex-direction: column;
-
 }
 
 .bioWrapper {
   width: 100%;
   height: 100%;
   display: flex;
-  background-color: red;
   justify-content: center;
 }
 
@@ -58,28 +62,26 @@ body {
   width: 100%;
   height: 100%;
   display: flex;
-  background-color: blue;
 }
 
 .work {
   width: 40em;
   height: 100%;
   display: flex;
-  color: black;
+  color: #fafae5;
 }
 
 .contactWrapper {
   width: 100%;
   height: 100%;
   display: flex;
-  background-color: yellow;
 }
 
 .contact {
   width: 40em;
   height: 100%;
   display: flex;
-  color: black;
+  color: #fafae5;
 }
 
 footer {
@@ -112,4 +114,8 @@ footer a {
 
 .hidden {
   display: none;
+}
+
+.material-icons {
+  cursor: pointer;
 }
