@@ -28,9 +28,7 @@ function init () {
   });
 
   resumeButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    middle.classList.add('showResume');
-    arrow.classList.remove('hidden');
+    
   });
 
   contactButton.addEventListener('click', (e) => {
