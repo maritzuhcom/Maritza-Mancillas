@@ -14,6 +14,7 @@ function init () {
   var contactButton = document.body.querySelector('.contactButton');
   var middle = document.body.querySelector('.middle');
   var arrow = document.body.querySelector('[data-ui~=arrow]');
+  var sendEmail = document.body.querySelector('.sendEmail');
 
   bioButton.addEventListener('click', (e) => {
     e.preventDefault();
@@ -28,7 +29,7 @@ function init () {
   });
 
   resumeButton.addEventListener('click', (e) => {
-    
+
   });
 
   contactButton.addEventListener('click', (e) => {
@@ -41,5 +42,12 @@ function init () {
     e.preventDefault();
     middle.className = 'middle';
     arrow.classList.add('hidden');
+  });
+
+  sendEmail.addEventListener('click', (e) => {
+    var email = 'mancillas.maritza@gmail.com';
+        var subject = 'Dear Maritza';
+        var emailBody = 'Hello, ';
+        document.location = `mailto:${email}?subject=${subject}&body=${emailBody}`;
   });
 }
