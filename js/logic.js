@@ -15,6 +15,9 @@ function init () {
   var middle = document.body.querySelector('.middle');
   var arrow = document.body.querySelector('[data-ui~=arrow]');
   var sendEmail = document.body.querySelector('.sendEmail');
+  var sendLinkedin = document.body.querySelector('.sendLinkedin');
+  var sendFacebook = document.body.querySelector('.sendFacebook');
+  var sendSpotify = document.body.querySelector('.sendSpotify');
 
   bioButton.addEventListener('click', (e) => {
     e.preventDefault();
@@ -49,5 +52,18 @@ function init () {
         var subject = 'Dear Maritza';
         var emailBody = 'Hello, ';
         document.location = `mailto:${email}?subject=${subject}&body=${emailBody}`;
+  });
+
+  sendLinkedin.addEventListener('click', (e) => {
+
+      window.open('https://www.linkedin.com/in/maritza-m-328363133/', '_blank');
+  });
+
+  sendFacebook.addEventListener('click', (e) => {
+      window.open('https://www.facebook.com/mancillas.maritza', '_blank');
+  });
+
+  sendSpotify.addEventListener('click', (e) => {
+      window.open('http://open.spotify.com/user/maritzuhcom', '_blank');
   });
 }
