@@ -1,69 +1,89 @@
 window.addEventListener(
   'DOMContentLoaded',
-  init
+  init, { once: true }
 );
+
 function init () {
-  window.removeEventListener(
-    'DOMContentLoaded',
-    init
-  );
+  const arrow = document.body.querySelector('[data-ui~=arrow]');
+  const work = document.body.querySelector('.work-content');
+  const workButton = document.body.querySelector('.workButton');
+  const bioButton = document.body.querySelector('.bioButton');
+  const bioSection = document.body.querySelector('.bioWrapper');
 
-  var bioButton = document.body.querySelector('.bioButton');
-  var workButton = document.body.querySelector('.workButton');
-  var resumeButton = document.body.querySelector('.resumeButton');
-  var contactButton = document.body.querySelector('.contactButton');
-  var middle = document.body.querySelector('.middle');
-  var arrow = document.body.querySelector('[data-ui~=arrow]');
-  var sendEmail = document.body.querySelector('.sendEmail');
-  var sendLinkedin = document.body.querySelector('.sendLinkedin');
-  var sendFacebook = document.body.querySelector('.sendFacebook');
-  var sendSpotify = document.body.querySelector('.sendSpotify');
+  const contact = document.body.querySelector('.contactWrapper');
+  const contactButton = document.body.querySelector('.contactButton');
 
-  bioButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    middle.classList.add('showBio');
-    arrow.classList.remove('hidden');
-  });
-
-  workButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    middle.classList.add('showWork');
-    arrow.classList.remove('hidden');
-  });
-
-  resumeButton.addEventListener('click', (e) => {
-
-  });
-
-  contactButton.addEventListener('click', (e) => {
-    e.preventDefault();
-    middle.classList.add('showContact');
-    arrow.classList.remove('hidden');
-  });
+  const sendEmail = document.body.querySelector('.sendEmail');
+  const sendLinkedin = document.body.querySelector('.sendLinkedin');
+  const sendFacebook = document.body.querySelector('.sendFacebook');
+  const sendSpotify = document.body.querySelector('.sendSpotify');
 
   arrow.addEventListener('click', (e) => {
     e.preventDefault();
-    middle.className = 'middle';
-    arrow.classList.add('hidden');
+    showMenu();
+    bioSection.classList.remove('open');
+    bioSection.dataset.status = 'closed';
+    work.classList.remove('open');
+    work.dataset.status = 'closed';
+    contact.classList.remove('open');
+    contact.dataset.status = 'closed';
+  });
+
+  bioButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    bioSection.dataset.status = 'open';
+    bioSection.classList.add('open');
+    hideMenu();
+  });
+
+  workButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    work.dataset.status = 'open';
+    work.classList.add('open');
+    hideMenu();
+  });
+
+  contactButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    contact.dataset.status = 'open';
+    contact.classList.add('open');
+    hideMenu();
   });
 
   sendEmail.addEventListener('click', (e) => {
-    var email = 'mancillas.maritza@gmail.com';
-        var subject = 'Dear Maritza';
-        var emailBody = 'Hello, ';
-        document.location = `mailto:${email}?subject=${subject}&body=${emailBody}`;
+    const email = 'mancillas.maritza@gmail.com';
+    const subject = 'Dear Maritza';
+    const emailBody = 'Hello, ';
+    document.location = `mailto:${email}?subject=${subject}&body=${emailBody}`;
   });
 
   sendLinkedin.addEventListener('click', (e) => {
-
-      window.open('https://www.linkedin.com/in/maritza-m-328363133/', '_blank');
+    window.open('https://www.linkedin.com/in/maritza-m-328363133/', '_blank');
   });
 
   sendFacebook.addEventListener('click', (e) => {
-      window.open('https://www.facebook.com/mancillas.maritza', '_blank');
+    window.open('https://www.facebook.com/mancillas.maritza', '_blank');
   });
 
   sendSpotify.addEventListener('click', (e) => {
-      window.open('http://open.spotify.com/user/maritzuhcom', '_blank');
+    window.open('http://open.spotify.com/user/maritzuhcom', '_blank');
   });
+}
+
+function showMenu() {
+  const menu = document.body.querySelector('.content');
+  const arrow = document.body.querySelector('[data-ui~=arrow]');
+
+  arrow.classList.add('hidden');
+  menu.classList.remove('closed');
+  menu.dataset.status = 'open';
+}
+
+function hideMenu() {
+  const menu = document.body.querySelector('.content');
+  const arrow = document.body.querySelector('[data-ui~=arrow]');
+
+  menu.classList.add('closed');
+  menu.dataset.status = 'closed';
+  arrow.classList.remove('hidden');
 }

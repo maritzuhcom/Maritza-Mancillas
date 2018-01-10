@@ -35,7 +35,7 @@ h1 {
   flex-direction: row;
   justify-content: flex-start;
   height: 100%;
-  width: 400%;
+  width: 100%;
   position: relative;
   left: 0;
   transition: left 500ms;
@@ -51,6 +51,10 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.content.closed {
+  display: none;
 }
 
 .bio {
@@ -69,11 +73,15 @@ h1 {
   top: 0;
 }
 
-.bioWrapper {
+.bioWrapper.open {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
+}
+
+.bioWrapper {
+  display: none;
 }
 
 .work {
@@ -85,12 +93,28 @@ h1 {
   position: relative;
 }
 
+.work-content {
+  display: none;
+}
+
+.work-content.open{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .work h1 {
   position: absolute;
   top: 0;
 }
 
 .contactWrapper {
+  display: none;
+}
+
+.contactWrapper.open {
   width: 100%;
   height: 100%;
   display: flex;
@@ -150,4 +174,44 @@ body footer a.github {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+@media only screen and (max-width : 450px) {
+  .content {
+    font-size: 20px;
+    padding: 0 1em 0 1em;
+  }
+  .bioWrapper {
+    font-size: 14px;
+    padding: 0 1em 0 1em;
+  }
+  .contact {
+    width: 20em;
+  }
+  .headerTitle {
+    position: fixed !important;
+    top: 0px !important;
+    right: 14px;
+    font-size: 27px;
+  }
+}
+
+@media only screen and (max-height : 450px) {
+  .content {
+    font-size: 20px;
+    padding: 0 1em 0 1em;
+  }
+  .bioWrapper {
+    font-size: 14px;
+    padding: 0 1em 0 1em;
+  }
+  .contact {
+    width: 20em;
+  }
+  .headerTitle {
+    position: fixed !important;
+    top: 0px !important;
+    right: 14px;
+    font-size: 27px;
+  }
 }

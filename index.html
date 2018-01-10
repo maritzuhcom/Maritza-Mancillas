@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>Maritza Mancillas</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=.5">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="shortcut icon" href="favicon.ico">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Space+Mono" rel="stylesheet">
@@ -15,8 +18,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   </head>
   <body class="demo-tsula">
-      <section class = "top">
-        <header>
+      <section>
+        <header class = "top">
           <h2 class = 'name'>Maritza Mancillas</h2>
           <i class="material-icons hidden" data-ui="arrow">arrow_back</i>
         </header>
@@ -25,7 +28,7 @@
 
       <section class = 'middle'>
 
-          <section class="content">
+          <section class="content" data-status = 'open'>
             <nav class="menu menu--tsula">
               <a class="menu__item bioButton" href="">
                 <span class="menu__item-name">Bio</span>
@@ -39,24 +42,24 @@
                 <span class="menu__item-name ">Contact</span>
                 <span class="menu__item-label">Get in touch!</span>
               </a>
-              <a class="menu__item resumeButton" href="https://drive.google.com/file/d/1KVOAyoKkrVk9mR3Zr9o1cZXpII7lMGLC/view?usp=sharing">
+              <a class="menu__item resumeButton" href="https://docs.google.com/document/d/1EB460LgLbE3i5WI6Stb0GVyVmyJ0BrRxNLXHdi801k8/edit?usp=sharing">
                 <span class="menu__item-name ">Resume</span>
                 <span class="menu__item-label">Job experience</span>
               </a>
             </nav>
           </section>
 
-          <section class = "bioWrapper">
+          <section class = "bioWrapper" data-status = 'closed'>
            <section class = "bio">
-            <h1>Bio</h1>
+            <h1 class = 'headerTitle'>Bio</h1>
             <p>
               <strong>Welcome</strong>, I'm a Front End Developer from Los Angeles, California.
               I like to explore new methods in development and work on
               creating new and awesome apps. I started my career as a front end
-              developer in college where I created my seinor design
-              project, I have been working towards keeping up with the latest tech ever since.
-              I'm always excited to read articles on new CSS rules or those
-              to come. What I love doing most when working is implementing new
+              developer in college where I created my senior design
+              project, then I started working at SSMP where I currently am and have been for the past 2 years.
+              I keep up with the latest tech and am always excited to read articles on new features for JS and CSS.
+              What I love doing most when working is implementing new
               features, I look for tasks in my job that involve new features
               that require custom solutions.
               <br>
@@ -69,32 +72,35 @@
 
               <br>
               HTML5, CSS3, Javascript, ES6, Axios,
-              Node JS, Material UI/Icons/Fonts, Bootstrap,
-              Lodash, HighCharts, SPA,
-              JIRA, Agile.
+              Node JS, React, Redux, Webpack, Babel,
+              Material UI/Icons/Fonts, Bootstrap,
+              Lodash, HighCharts, SPA, JIRA, Agile.
             </p>
           </section>
         </section>
 
-      <section class = "content">
+      <section class = "work-content" data-status = 'closed'>
         <div class='work'>
-          <h1>Work</h1>
+          <h1 class = 'headerTitle'>Work</h1>
           <nav class="menu menu--tsula">
-            <a class="menu__item" href="https://maritzuhcom.github.io/PhotoApp/" target="_blank">
-              <span class="menu__item-name">PhotoApp</span>
-              <span class="menu__item-label">Simple Demo</span>
+            <a class="menu__item" href="https://maritzuhcom.github.io/test-app/" target="_blank">
+              <span class="menu__item-name">React Redux</span>
+              <span class="menu__item-label">Notes App</span>
             </a>
-
             <a class="menu__item" href="https://maritzuhcom.github.io/react-redux-restaurant/#/" target="_blank">
               <span class="menu__item-name">React Redux</span>
               <span class="menu__item-label">Restaurant Demo</span>
+            </a>
+            <a class="menu__item" href="https://maritzuhcom.github.io/PhotoApp/" target="_blank">
+              <span class="menu__item-name">PhotoApp</span>
+              <span class="menu__item-label">Simple Demo</span>
             </a>
           </nav>
         </div>
       </section>
 
-      <section class = "contactWrapper">
-        <h1>Follow me here</h1>
+      <section class = "contactWrapper" data-status = 'closed'>
+        <h1 class = 'headerTitle'>Follow me here</h1>
          <section class = "contact">
           <i class="flaticon-email sendEmail"></i>
           <i class="flaticon-linkedin-button sendLinkedin"></i>
