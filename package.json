@@ -16,9 +16,5 @@
   "bugs": {
     "url": "https://github.com/maritzuhcom/Maritza-Mancillas/issues"
   },
-  "homepage": "https://github.com/maritzuhcom/Maritza-Mancillas#readme",
-  "dependencies": {
-    "electron": "^1.7.9",
-    "electron-packager": "^9.1.0"
-  }
+  "homepage": "https://github.com/maritzuhcom/Maritza-Mancillas#readme"
 }
