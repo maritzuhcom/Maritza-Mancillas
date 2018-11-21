@@ -1,0 +1,16 @@
+version: "3.4"
+services:
+  mm-website:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev.yml
+    container_name: mm-website
+    ports:
+      - "8080:5000"
+    volumes:
+      - .:/usr/src/app
+    environment:
+      NODE_ENV: development
+    env_file:
+      - ./.env
+    restart: always
