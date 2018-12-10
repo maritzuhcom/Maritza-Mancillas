@@ -63,7 +63,7 @@ export default (
     <html>
       <head>
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"></link>
-        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption|Sedgwick+Ave|Yantramanav:100,600|Marcellus" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption|Sedgwick+Ave|Yantramanav:100,900|Marcellus" rel="stylesheet">
         ${map(styles, style => `<link href="${style.file}" rel="stylesheet"/>`).join('\n')}
         ${styleTags}
         ${helmet.title.toString()}

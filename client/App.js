@@ -3,6 +3,7 @@ import { renderRoutes } from 'react-router-config';
 import styled from 'styled-components';
 
 import Header from './components/Header';
+import FoorterComponent from './components/Footer';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
       <Main>
         <Header />
         { renderRoutes(route.routes) }
+        <FoorterComponent />
       </Main>
     );
   }
@@ -25,7 +27,7 @@ const Main = styled.main`
   left: 0;
   display: flex;
   flex-direction: column;
-  background-color: #bdae93;
+  background-color: #E7E7E7;
   font-family: 'Yantramanav', sans-serif;
 
 `;

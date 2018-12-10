@@ -9,6 +9,13 @@ export default [{
   }),
   routes: [
   {
+    path: '/contact',
+    component: Loadable({
+      loader: () => import('./client/pages/Contact'),
+      loading: PageLoading,
+    }),
+  },
+  {
     path: '/about',
     component: Loadable({
       loader: () => import('./client/pages/About'),

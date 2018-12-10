@@ -32,7 +32,7 @@ class Header extends Component {
         <HeaderSection margin="0 5em 0 0">
           <Link to="/"><TitleMenuItem>WORK</TitleMenuItem></Link>
           <Link to="/about"><TitleMenuItem>ABOUT</TitleMenuItem></Link>
-          <TitleMenuItem>CONTACT</TitleMenuItem>
+          <Link to="/contact"><TitleMenuItem>CONTACT</TitleMenuItem></Link>
         </HeaderSection>
       </MainHeader>
     );

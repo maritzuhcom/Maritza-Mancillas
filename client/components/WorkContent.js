@@ -131,7 +131,6 @@ const Intro = styled.div`
       display: flex;
       margin-bottom: 1em;
       letter-spacing: 1px;
-      font-weight: 600px;
     }
 `;
 
@@ -142,7 +141,7 @@ const Projects = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: blue;
+  background-color: #E7E7E7;
 `;
 
 const ProjectList = styled.div`
