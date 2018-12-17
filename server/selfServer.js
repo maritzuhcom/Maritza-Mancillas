@@ -1,9 +1,9 @@
 import express from 'express';
+import sendFormDataText from './controllers/twilio/main';
 
 const router = express.Router();
 
-router.get('/test', () => {
-  console.log('made a request to myself');
-});
+// requests POST going to /api/contact handled by sendFormDataText
+router.post('/contact', sendFormDataText);
 
 export default router;

@@ -131,6 +131,7 @@ const Intro = styled.div`
       display: flex;
       margin-bottom: 1em;
       letter-spacing: 1px;
+      color: #234345;
     }
 `;
 

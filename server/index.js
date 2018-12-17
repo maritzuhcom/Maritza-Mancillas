@@ -12,7 +12,7 @@ import htmlRenderer from './middleware/htmlRenderer';
 import selfApi from './selfServer';
 
 const app = express();
-const port: number = config.devPort;
+const port = config.devPort;
 
 // logging
 app.use('/api', morgan('tiny'));
@@ -22,6 +22,8 @@ app.use('*', cookieParser());
 
 // route tp self api
 app.use('/api', bodyParser.json());
+
+// all request to HOST (aka localhost) /api, will go here
 app.use('/api', selfApi);
 
 // let app get images and such

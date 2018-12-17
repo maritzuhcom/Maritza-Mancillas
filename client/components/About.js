@@ -12,7 +12,7 @@ export default class AboutMe extends Component {
           <span>
             Hi! I grew up in the San Fernando Valley, CA and live in Northridge.
             I like to explore new methods in development and work on creating
-            new and awesome apps. I started my career my senior year of college
+            new and awesome apps. I started my career during my senior year of college
             where I decided to make a simple app for my senior design project.
             I used HTML, CSS and Vanilla JS. I then decided to pursue a career in
             development. I enjoyed designing and creating user interfaces so it
@@ -73,7 +73,7 @@ const AboutMeParagraph = styled.div`
   flex-direction: column;
 
   & span {
-    font-size: 16.5px;
+    font-size: 17px;
     color: #234345;
     display: flex;
     justify-content: center;

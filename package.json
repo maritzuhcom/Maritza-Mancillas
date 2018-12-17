@@ -45,6 +45,7 @@
     "serialize-javascript": "^1.5.0",
     "stripe": "^6.15.0",
     "styled-components": "4.0.0",
+    "twilio": "^3.25.0",
     "validator": "^10.8.0",
     "webpack": "^4.12.0",
     "webpack-dashboard": "^2.0.0",
