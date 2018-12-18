@@ -2,8 +2,8 @@ import validator from 'validator';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 
-const authToken = '5e08c1faee663c9bc6bb2361a893381f';
-const accountSid = 'AC9d8beac547ce8960d8741592bad31694';
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const accountSid = process.env.TWILIO_ACCOUNT_ID;
 const client = require('twilio')(accountSid, authToken);
 
 const sendFormDataText = (req, res) => {
