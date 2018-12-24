@@ -8,16 +8,16 @@ export default class FoorterComponent extends Component {
       <FooterWrapper>
         <FooterContent>
           <span>FOLLOW</span>
-          <a className="github" href="https://github.com/maritzuhcom/" title="Maritza Mancillas' github" target="_blank" rel="noopener noreferrer">
+          <a className="github" href="https://github.com/maritzuhcom/" title="Maritza Mancillas github" target="_blank" rel="noopener noreferrer">
             <Icon name="github" size="large" />
           </a>
-          <a className="linkedin" href="https://www.linkedin.com/in/maritza-m-328363133/" title="Maritza Mancillas' linkedin" target="_blank" rel="noopener noreferrer">
+          <a className="linkedin" href="https://www.linkedin.com/in/maritza-m-328363133/" title="Maritza Mancillas linkedin" target="_blank" rel="noopener noreferrer">
             <Icon name="linkedin" size="large" />
           </a>
-          <a className="facebook f" href="https://www.facebook.com/mancillas.maritza" title="Maritza Mancillas' facebook f" target="_blank" rel="noopener noreferrer">
+          <a className="facebook f" href="https://www.facebook.com/mancillas.maritza" title="Maritza Mancillas facebook f" target="_blank" rel="noopener noreferrer">
             <Icon name="facebook f" size="large" />
           </a>
-          <a className="spotify" href=" https://open.spotify.com/user/maritzuhcom?si=vE-Mffb5TSC5yoG4R2bnnA" title="Maritza Mancillas' spotify" target="_blank" rel="noopener noreferrer">
+          <a className="spotify" href=" https://open.spotify.com/user/maritzuhcom?si=vE-Mffb5TSC5yoG4R2bnnA" title="Maritza Mancillas spotify" target="_blank" rel="noopener noreferrer">
             <Icon name="spotify" size="large" />
           </a>
         </FooterContent>

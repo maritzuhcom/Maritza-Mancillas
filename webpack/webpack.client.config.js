@@ -1,6 +1,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const { ReactLoadablePlugin } = require('react-loadable/webpack');
+const webpack = require('webpack');
 const baseConfig = require('./webpack.base.config');
 
 module.exports = merge(baseConfig, {
@@ -26,6 +27,11 @@ module.exports = merge(baseConfig, {
     new ReactLoadablePlugin({
       filename: './dist/react-loadable.json',
       publicPath: '/',
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+      },
     }),
   ],
 });

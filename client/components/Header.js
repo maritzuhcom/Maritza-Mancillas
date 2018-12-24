@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import isEmpty from 'lodash/isEmpty';
 import styled, { keyframes } from 'styled-components';
 import { Popup } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
 
 class Header extends Component {
   render() {
+    const { location } = this.props;
+    const { pathname } = location;
     const PopupBasic = () => (
       <Popup
         trigger={(
@@ -30,16 +33,44 @@ class Header extends Component {
         </HeaderSection>
 
         <HeaderSection margin="0 5em 0 0">
-          <Link to="/"><TitleMenuItem>WORK</TitleMenuItem></Link>
-          <Link to="/about"><TitleMenuItem>ABOUT</TitleMenuItem></Link>
-          <Link to="/contact"><TitleMenuItem>CONTACT</TitleMenuItem></Link>
+          <Link to="/">
+            <TitleMenuItem
+              underline={pathname === '/'}
+            >
+              WORK
+            </TitleMenuItem>
+          </Link>
+
+          <Link to="/about">
+            <TitleMenuItem
+              underline={pathname === '/about'}
+            >
+              ABOUT
+            </TitleMenuItem>
+          </Link>
+
+          <Link to="/contact">
+            <TitleMenuItem
+              underline={pathname === '/contact'}
+            >
+              CONTACT
+            </TitleMenuItem>
+          </Link>
         </HeaderSection>
       </MainHeader>
     );
   }
 }
 
-export default Header;
+Header.propTypes = {
+  location: PropTypes.object,
+};
+
+Header.defaultProps = {
+  location: {},
+};
+
+export default withRouter(Header);
 
 const MainHeader = styled.header`
   height: 5em;
@@ -88,16 +119,18 @@ const NameTitle = styled.div`
 `;
 
 const TitleMenuItem = styled.div`
-  font-size: 12.5px;
+  font-size: 13px;
   letter-spacing: 2px;
   font-weight: 600;
-  padding-right: 1em;
+  margin-right: 1em;
   height: 2em;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   color: #234345;
   transition: color 300ms ease-in-out;
+
+  border-bottom: ${props => (props.underline ? '0.5px solid currentColor' : 'none')};
 
   &:hover {
     cursor: pointer;

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { renderRoutes } from 'react-router-config';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import Header from './components/Header';
 import FoorterComponent from './components/Footer';
+// import Modal from './components/Modal';
 
 class App extends Component {
   render() {
@@ -17,6 +19,14 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  route: PropTypes.object,
+};
+
+App.defaultProps = {
+  route: {},
+};
 
 export default App;
 

@@ -7,6 +7,7 @@ const accountSid = process.env.TWILIO_ACCOUNT_ID;
 const client = require('twilio')(accountSid, authToken);
 
 const sendFormDataText = (req, res) => {
+  console.log(req.body);
   // TODO get values out of req.body and validate them
   const email = get(req, 'body.email', '');
   const firstName = get(req, 'body.firstName', '');
@@ -17,12 +18,12 @@ const sendFormDataText = (req, res) => {
     return;
   }
 
-  if (validator.isAlphanumeric(firstName)) {
+  if (!validator.isAlphanumeric(firstName)) {
     res.status(400).send({ message: 'first name is invalid' });
     return;
   }
 
-  if (validator.isAlphanumeric(lastName)) {
+  if (!validator.isAlphanumeric(lastName)) {
     res.status(400).send({ message: 'last name is invalid' });
   }
 
