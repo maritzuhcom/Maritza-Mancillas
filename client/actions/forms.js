@@ -19,10 +19,12 @@ class Forms {
     axios.post('/contact/', data).then(() => {
       dispatch({
         type: Forms.CONTACT_FORM_SUCCESS,
+        payload: 'Submitted successfully',
       });
     }).catch(() => {
       dispatch({
         type: Forms.CONTACT_FORM_FAIL,
+        payload: 'Please fill all fields',
       });
     });
 

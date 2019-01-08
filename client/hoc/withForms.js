@@ -7,6 +7,7 @@ const withForms = (ComposedComponent) => {
 
   const mapStateToProps = ({ forms }) => ({
     contactFormStatus: forms.contactFormStatus,
+    message: forms.message,
   });
 
   const mapDispatchToProps = {

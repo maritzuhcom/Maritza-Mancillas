@@ -2,6 +2,7 @@ import Forms from '../actions/forms';
 
 const defaultState = {
   contactFormStatus: null, // null -> nothing 'loading', 'submitted'
+  message: '',
 };
 
 export default (state = defaultState, action) => {
@@ -17,6 +18,7 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         contactFormStatus: 'submitted', // show "submitted" modal
+        message: action.payload,
       };
     }
 
@@ -24,6 +26,7 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         contactFormStatus: 'error', // show "error" modal
+        message: action.payload,
       };
     }
 

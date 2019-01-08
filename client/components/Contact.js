@@ -1,3 +1,4 @@
+/* eslint react/no-did-update-set-state:0 */
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Form, Button } from 'semantic-ui-react';
@@ -50,6 +51,26 @@ class ContactPage extends Component {
   handleSubmit = () => {
     const { submitContactForm } = this.props;
     submitContactForm(this.state);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { contactFormStatus } = this.props;
+
+    if (prevProps.contactFormStatus === contactFormStatus) {
+      return;
+    }
+
+    if (contactFormStatus === 'submitted') {
+      this.setState({
+        firstName: '',
+        firstNameError: null,
+        lastName: '',
+        lastNameError: null,
+        email: '',
+        emailError: null,
+        message: '',
+      });
+    }
   }
 
   render() {
@@ -116,12 +137,12 @@ class ContactPage extends Component {
 
 ContactPage.propTypes = {
   submitContactForm: PropTypes.func,
-  contactFormStatus: PropTypes.object,
+  contactFormStatus: PropTypes.string,
 };
 
 ContactPage.defaultProps = {
   submitContactForm: () => {},
-  contactFormStatus: {},
+  contactFormStatus: '',
 };
 
 
