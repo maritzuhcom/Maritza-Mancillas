@@ -33,7 +33,7 @@ class MiddleContent extends Component {
           <Intro>
             <span>Hi, I'm Maritza Mancillas - a LA-based, Front End Developer. </span>
 
-            <span>Here are a few project I have done on my spare time. </span>
+            <span>Here are a few projects I have done on my spare time. </span>
           </Intro>
 
           <Projects>
@@ -99,7 +99,7 @@ const IconWrapper = styled.div`
   padding-bottom: 2em;
 
   & i {
-    color: #234345;
+    color: #212121;
     transition: color 300ms ease-in-out;
   }
 

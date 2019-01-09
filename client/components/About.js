@@ -11,22 +11,23 @@ export default class AboutMe extends Component {
         </NameTitle>
         <AboutMeParagraph>
           <span>
-            Hi! I grew up in the San Fernando Valley, CA and live in Northridge.
+            Hi! I'm from The San Fernando Valley in CA.
             I like to explore new methods in development and work on creating
             new and awesome apps. I started my career during my senior year of college
             where I decided to make a simple app for my senior design project.
             I used HTML, CSS and Vanilla JS. I then decided to pursue a career in
-            development. I enjoyed designing and creating user interfaces so it
-            was the perfect fit. What I enjoy most is coming up with new ideas
-            and executing. I keep up with the latest technologies and am always
+            development. I enjoyed designing and creating user interfaces, so it
+            was the perfect fit. What I enjoy most is coming up with new ideas and
+            getting to apply them. I keep up with the latest technologies and am always
             excited to read articles on new features for JS and CSS. What I love
             doing most when working is implementing new features. I look for tasks
-            in my job that involve new features that require custome solutions.
-            I am very detail oriented and like to do high quality work by looking for
-            ways to be efficient and enhance designs.
+            in my job that involve custom solutions.
+            I pride myself in being very detail oriented and like to do high quality
+            work by looking for ways to be efficient and enhance designs.
             When I'm not coding, I enjoy hiking, cardio, tennis, ping pong, movies
             and music. I also like to go out with friends and explore new bars and
-            restaurants.
+            restaurants. My current goals are to continue to improve in my career and
+            travel more often.
           </span>
         </AboutMeParagraph>
         <ImageWrapper>
@@ -57,7 +58,7 @@ const NameTitle = styled.div`
 
   & span {
     width: 20em;
-    font-size: 32px;
+    font-size: 33px;
     font-family: 'Marcellus', serif;
     display: flex;
     justify-content: center;

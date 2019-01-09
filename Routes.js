@@ -1,4 +1,3 @@
-// @flow
 import Loadable from 'react-loadable';
 import PageLoading from './client/components/loaders/PageLoading';
 

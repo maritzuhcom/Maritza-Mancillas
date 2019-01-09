@@ -145,7 +145,6 @@ ContactPage.defaultProps = {
   contactFormStatus: '',
 };
 
-
 export default withForms(ContactPage);
 
 const FormWrapper = styled.section`

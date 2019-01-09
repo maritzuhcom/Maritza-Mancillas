@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Modal, Button } from 'semantic-ui-react';
+import { Modal } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 import withForms from '../hoc/withForms';
-
 
 class ModalComponent extends Component {
   render() {
@@ -20,5 +20,15 @@ class ModalComponent extends Component {
     );
   }
 }
+
+ModalComponent.propTypes = {
+  contactFormStatus: PropTypes.func,
+  message: PropTypes.object,
+};
+
+ModalComponent.defaultProps = {
+  contactFormStatus: () => {},
+  message: {},
+};
 
 export default withForms(ModalComponent);
