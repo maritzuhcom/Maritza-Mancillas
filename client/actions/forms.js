@@ -32,7 +32,7 @@ class Forms {
       dispatch({
         type: Forms.CONTACT_FORM_CLEAR,
       });
-    }, 2000);
+    }, 3000);
   }
 }
 

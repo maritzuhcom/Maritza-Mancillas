@@ -4,7 +4,7 @@ import { Icon } from 'semantic-ui-react';
 import Parallax from 'react-rellax';
 import WorkDemos from './WorkDemos';
 
-import backgroundImg from '../../assets/backgroundImg.png';
+import homepagePic from '../../assets/homepageImage.png';
 import notesApp from '../../assets/notes.png';
 import orionSite from '../../assets/orion.png';
 import photoApp from '../../assets/photoapp.png';
@@ -79,7 +79,7 @@ const MidContent = styled.div`
 const ImgDiv = styled.div`
   height: calc(100vh - 5em);
   width: 100%;
-  background-image: url(${backgroundImg});
+  background-image: url(${homepagePic});
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

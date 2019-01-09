@@ -17,6 +17,26 @@ class ContactPage extends Component {
     message: '',
   }
 
+  componentDidUpdate(prevProps) {
+    const { contactFormStatus } = this.props;
+
+    if (prevProps.contactFormStatus === contactFormStatus) {
+      return;
+    }
+
+    if (contactFormStatus === 'submitted') {
+      this.setState({
+        firstName: '',
+        firstNameError: null,
+        lastName: '',
+        lastNameError: null,
+        email: '',
+        emailError: null,
+        message: '',
+      });
+    }
+  }
+
   onFirstNameChange = (e) => {
     const { value } = e.target;
     this.setState({
@@ -51,26 +71,6 @@ class ContactPage extends Component {
   handleSubmit = () => {
     const { submitContactForm } = this.props;
     submitContactForm(this.state);
-  }
-
-  componentDidUpdate(prevProps) {
-    const { contactFormStatus } = this.props;
-
-    if (prevProps.contactFormStatus === contactFormStatus) {
-      return;
-    }
-
-    if (contactFormStatus === 'submitted') {
-      this.setState({
-        firstName: '',
-        firstNameError: null,
-        lastName: '',
-        lastNameError: null,
-        email: '',
-        emailError: null,
-        message: '',
-      });
-    }
   }
 
   render() {

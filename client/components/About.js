@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import SMbeachPic from '../../assets/SMbeach.jpg';
 
 export default class AboutMe extends Component {
   render() {
@@ -28,7 +29,9 @@ export default class AboutMe extends Component {
             restaurants.
           </span>
         </AboutMeParagraph>
-        <ImageWrapper />
+        <ImageWrapper>
+          <DivImg />
+        </ImageWrapper>
       </AboutMeWrapper>
     );
   }
@@ -88,9 +91,17 @@ const ImageWrapper = styled.div`
   width: 40em;
   height: 40em;
   margin-bottom: 4em;
-  background-color: red;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+`;
+
+const DivImg = styled.div`
+  width: 100%;
+  height: 100%;
+  background-image: url(${SMbeachPic});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 `;
