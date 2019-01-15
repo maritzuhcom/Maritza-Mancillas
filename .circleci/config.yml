@@ -25,17 +25,22 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+  deploy:
+    working_directory: ~/Maritza-Mancillas # name of the dir we use in circle ci
+    machine:
+      enabled: true
+    steps:
       - run:
           name: Deploy Over SSH
           command: |
+            cd ~/Maritza-Mancillas
             pwd &&
             ls -la &&
             scp -r ~/Maritza-Mancillas $SSH_USER@$SSH_HOST:/root/Maritza-Mancillas &&
             ssh $SSH_USER@$SSH_HOST "cd ~/Maritza-Mancillas; ./circle_deployer.sh"
-
 workflows:
   version: 2
-  build:
+  build-and-deploy:
     jobs:
       - build
       - deploy:
