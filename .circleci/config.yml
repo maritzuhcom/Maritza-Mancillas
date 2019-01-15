@@ -32,9 +32,9 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            pwd  && |
-            ls -la  && |
-            scp -r ~/Maritza-Mancillas $SSH_USER@$SSH_HOST:/root/Maritza-Mancillas && |
+            pwd &&
+            ls -la &&
+            scp -r ~/Maritza-Mancillas $SSH_USER@$SSH_HOST:/root/Maritza-Mancillas &&
             ssh $SSH_USER@$SSH_HOST "cd ~/Maritza-Mancillas; ./circle_deployer.sh"
 workflows:
   version: 2
