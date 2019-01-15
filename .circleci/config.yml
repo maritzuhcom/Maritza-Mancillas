@@ -25,6 +25,8 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+       - store_artifacts:
+          path: /tmp/mm-website
   deploy:
     machine:
       enabled: true
@@ -32,7 +34,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            scp -r ~/mm-website $SSH_USER@$SSH_HOST:/root/mm-website |
+            scp -r /tmp/mm-website $SSH_USER@$SSH_HOST:/root/mm-website |
             ssh $SSH_USER@$SSH_HOST "cd ~/mm-website; ./circle_deployer.sh"
 workflows:
   version: 2
