@@ -32,7 +32,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            scp -r mm-website/* $SSH_USER@$SSH_HOST:/root/mm-website |
+            scp -r ~/mm-website/* $SSH_USER@$SSH_HOST:/root/mm-website |
             ssh $SSH_USER@$SSH_HOST "cd ~/mm-website; ./circle_deployer.sh"
 workflows:
   version: 2
