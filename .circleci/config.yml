@@ -21,12 +21,12 @@ jobs:
       - run:
           name: install-dependencies
           command: npm install
+      - store_artifacts:
+          path: /tmp/mm-website
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-       - store_artifacts:
-          path: /tmp/mm-website
   deploy:
     machine:
       enabled: true
