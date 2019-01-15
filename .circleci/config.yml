@@ -5,7 +5,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/mm-website # name of the dir we use in circle ci
+    working_directory: ~/Maritza-Mancillas # name of the dir we use in circle ci
     docker:
       - image: circleci/node:8.11
     steps:
@@ -21,8 +21,6 @@ jobs:
       - run:
           name: install-dependencies
           command: npm install
-      - store_artifacts:
-          path: /tmp/mm-website
       - save_cache:
           paths:
             - node_modules
@@ -34,8 +32,10 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
-            scp -r /tmp/mm-website $SSH_USER@$SSH_HOST:/root/mm-website |
-            ssh $SSH_USER@$SSH_HOST "cd ~/mm-website; ./circle_deployer.sh"
+            pwd |
+            ls -la |
+            scp -r ~/Maritza-Mancillas $SSH_USER@$SSH_HOST:/root/Maritza-Mancillas |
+            ssh $SSH_USER@$SSH_HOST "cd ~/Maritza-Mancillas; ./circle_deployer.sh"
 workflows:
   version: 2
   build-and-deploy:
