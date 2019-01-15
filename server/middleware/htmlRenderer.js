@@ -1,23 +1,45 @@
-// @flow
-/* eslint no-console: 0 */
-/* eslint flowtype/no-weak-types: 0 */
 import { matchRoutes } from 'react-router-config';
 
 import map from 'lodash/map';
 import reduce from 'lodash/reduce';
 import isEmpty from 'lodash/isEmpty';
 import forEach from 'lodash/forEach';
+import isNull from 'lodash/isNull';
 
 import Routes from '../../Routes';
 import renderHelper from '../utils/htmlFactory';
 import storeHelper from '../utils/storeFactory';
 import rootReducer from '../../client/reducers/rootReducer';
 
-function htmlRenderer(req, res) {
-  // create redux store
-  const store = storeHelper(req);
+function callStores(
+  loadList,
+  store,
+  req,
+  cb,
+) {
+  if (!loadList.length) {
+    cb();
+    return null;
+  }
 
-  const routes = matchRoutes(Routes, req.path);
+  const current  = loadList.shift();
+
+  return current(store, req).then(() => {
+    callStores(loadList, store, req, cb);
+  }).catch((e ) => {
+    console.log(e);
+    callStores(loadList, store, req, cb);
+  });
+}
+
+function asyncRender(
+  routes,
+  store,
+  res,
+  req,
+) {
+  // initial fetches load
+  const componentLoads = [];
 
   const componentFetches = reduce(routes, (
     accum,
@@ -27,13 +49,10 @@ function htmlRenderer(req, res) {
       return accum;
     }
 
-    accum.push(...map(route.loadData, storeReq => storeReq(store)));
+    accum.push(...map(route.loadData, (storeReq) => storeReq(store, req)));
 
     return accum;
   }, []);
-
-  // array for keeping track of 'loadData's
-  const componentLoads = [];
 
   // for every component load, force the requests to resolve
   // even if it fails because we still want to show something, anything lol
@@ -43,7 +62,10 @@ function htmlRenderer(req, res) {
     }
 
     componentLoads.push(new Promise((resolve) => {
-      promise.then(resolve).catch(resolve);
+      promise.then(resolve).catch((e) => {
+        console.log(e);
+        resolve();
+      });
     }));
   });
 
@@ -67,4 +89,37 @@ function htmlRenderer(req, res) {
   });
 }
 
-export default htmlRenderer;
+function htmlBlockingRenderer(req, res) {
+  // create redux store
+  const store = storeHelper(req);
+  // routes array
+  const routes = matchRoutes(Routes, req.path);
+
+  // blocking calls
+  const blockCalList = reduce(
+    routes,
+    (accum, { route }) => {
+      if (isNull(route.blockingLoadData) || isEmpty(route.blockingLoadData)) {
+        return accum;
+      }
+
+      accum.push(...route.blockingLoadData);
+      return accum;
+    },
+    [],
+  );
+
+  if (!isEmpty(blockCalList)) {
+    callStores(
+      blockCalList,
+      store,
+      req,
+      asyncRender.bind(this, routes, store, res, req),
+    );
+    return;
+  }
+
+  asyncRender(routes, store, res, req);
+}
+
+export default htmlBlockingRenderer;

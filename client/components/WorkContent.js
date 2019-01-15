@@ -31,9 +31,12 @@ class MiddleContent extends Component {
 
         <WorkContent ref={this.workContent}>
           <Intro>
-            <span>Hi, I'm Maritza Mancillas - a LA-based, Front End Developer. </span>
-
-            <span>Here are a few projects I have done on my spare time. </span>
+            <span>
+              Hi, I'm Maritza Mancillas - a LA-based, Front End Developer.
+              <br />
+              <br />
+              Here are a few projects I have done on my spare time.
+            </span>
           </Intro>
 
           <Projects>
@@ -129,9 +132,14 @@ const Intro = styled.div`
     & span {
       font-size: 28px;
       display: flex;
-      margin-bottom: 1em;
       letter-spacing: 1px;
       color: #234345;
+    }
+
+    @media (max-width: 713px) {
+      line-height: 1em;
+      padding: 0 1em;
+      height: 60px;
     }
 `;
 
