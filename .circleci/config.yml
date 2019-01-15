@@ -32,6 +32,7 @@ jobs:
       - run:
           name: Deploy Over SSH
           command: |
+            cd ~/Maritza-Mancillas &&
             pwd &&
             ls -la &&
             scp -r ~/Maritza-Mancillas $SSH_USER@$SSH_HOST:/root/Maritza-Mancillas &&
