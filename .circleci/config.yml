@@ -28,5 +28,6 @@ jobs:
       - run:
           name: Deploy app to Digital Ocean Server via Docker
           command: |
-            scp -o StrictHostKeyChecking=no -r ~/Maritza-Mancillas $SSH_USER@$SSH_HOST:/root/Maritza-Mancillas &&
-            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "cd ~/Maritza-Mancillas; ./circle_deployer.sh"
+            tar -cvf ~/Maritza-Mancillas.tar ~/Maritza-Mancillas &&
+            scp -o StrictHostKeyChecking=no -r ~/Maritza-Mancillas.tar $SSH_USER@$SSH_HOST:/root/ &&
+            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "cd /root; tar -xvf/Maritza-Mancillas.tar; cd Maritza-Mancillas; ./circle_deployer.sh"

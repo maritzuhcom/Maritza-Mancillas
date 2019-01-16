@@ -6,9 +6,11 @@ services:
       dockerfile: Dockerfile.prod.yml
     container_name: mm-website
     ports:
-      - "8080:80"
+      - "80:5000"
     volumes:
       - .:/usr/src/app
     environment:
-      NODE_ENV: production
+      - NODE_ENV=production
+      - TWILIO_AUTH_TOKEN
+      - TWILIO_ACCOUNT_ID
     restart: always

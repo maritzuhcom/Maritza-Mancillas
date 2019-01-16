@@ -116,6 +116,10 @@ const NameTitle = styled.div`
     animation: ${bounceEffect} 1s;
     cursor: pointer;
   }
+
+  @media (max-width: 435px) {
+    padding-left: 0;
+  }
 `;
 
 const TitleMenuItem = styled.div`

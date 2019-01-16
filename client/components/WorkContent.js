@@ -117,6 +117,10 @@ const WorkContent = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 300px) {
+    width: 13em;
+  }
 `;
 
 const Intro = styled.div`
@@ -137,9 +141,12 @@ const Intro = styled.div`
     }
 
     @media (max-width: 713px) {
-      line-height: 1em;
+      line-height: 2em;
       padding: 0 1em;
-      height: 60px;
+    }
+
+    @media (max-width: 300px) {
+      width: 22em;
     }
 `;
 
