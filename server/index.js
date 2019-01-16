@@ -27,7 +27,7 @@ app.use('/api', bodyParser.json());
 app.use('/api', selfApi);
 
 // let app get images and such
-app.use(express.static('public'));
+app.use(express.static(`${__dirname}/public`));
 
 // react/redux rendering engine
 // accept all requests and let react-router/lodable split it up

@@ -22,11 +22,11 @@ function callStores(
     return null;
   }
 
-  const current  = loadList.shift();
+  const current = loadList.shift();
 
   return current(store, req).then(() => {
     callStores(loadList, store, req, cb);
-  }).catch((e ) => {
+  }).catch((e) => {
     console.log(e);
     callStores(loadList, store, req, cb);
   });
@@ -49,7 +49,7 @@ function asyncRender(
       return accum;
     }
 
-    accum.push(...map(route.loadData, (storeReq) => storeReq(store, req)));
+    accum.push(...map(route.loadData, storeReq => storeReq(store, req)));
 
     return accum;
   }, []);
