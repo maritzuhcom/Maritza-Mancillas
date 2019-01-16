@@ -1,3 +1,3 @@
 export default {
-  devPort: 5000,
+  devPort: process.env.PORT || 5000,
 };
