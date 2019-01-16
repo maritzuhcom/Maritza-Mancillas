@@ -30,4 +30,4 @@ jobs:
           command: |
             tar -cvf ~/Maritza-Mancillas.tar ~/Maritza-Mancillas &&
             scp -o StrictHostKeyChecking=no -r ~/Maritza-Mancillas.tar $SSH_USER@$SSH_HOST:/root/ &&
-            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "tar xf /root/Maritza-Mancillas.tar && cd /root/home/circleci/Maritza-Mancillas/ && pwd && ./.circle_deployer.sh"
+            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "tar xf /root/Maritza-Mancillas.tar && cd /root/home/circleci/Maritza-Mancillas/ && ./.circle_deployer.sh"

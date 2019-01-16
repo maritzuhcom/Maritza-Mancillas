@@ -14,6 +14,8 @@ import selfApi from './selfServer';
 const app = express();
 const port = config.devPort;
 
+process.env.PWD = process.cwd();
+
 // logging
 app.use('/api', morgan('tiny'));
 
@@ -27,7 +29,7 @@ app.use('/api', bodyParser.json());
 app.use('/api', selfApi);
 
 // let app get images and such
-app.use(express.static(`${__dirname}/public`));
+app.use(express.static(`${process.env.PWD}/public`));
 
 // react/redux rendering engine
 // accept all requests and let react-router/lodable split it up
