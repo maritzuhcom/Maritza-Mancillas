@@ -15,4 +15,4 @@ RUN npm install
 EXPOSE 80
 
 # start server
-CMD TWILIO_ACCOUNT_ID=$TWILIO_ACCOUNT_ID TWILIO_AUTH_TOKEN=$TWILIO_AUTH_TOKEN NODE_ENV=production npm start
+CMD ["npm", "run", "start:server"]

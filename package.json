@@ -103,6 +103,7 @@
     "build:server": "webpack --config ./webpack/webpack.server.config.js",
     "dev:server:watch": "webpack --config ./webpack/webpack.server.config.js --watch",
     "dev:client:watch": "webpack --config ./webpack/webpack.client.config.js --watch",
+    "start:server": "TWILIO_ACCOUNT_ID=$TWILIO_ACCOUNT_ID TWILIO_AUTH_TOKEN=$TWILIO_AUTH_TOKEN NODE_ENV=production npm run dev:client:watch & npm run dev:server:watch & npm run dev:server",
     "start": "npm run dev:client:watch & npm run dev:server:watch & npm run dev:server"
   },
   "repository": {
