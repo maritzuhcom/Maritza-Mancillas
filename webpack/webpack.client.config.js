@@ -31,8 +31,6 @@ module.exports = merge(baseConfig, {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-        TWILIO_AUTH_TOKEN: JSON.stringify(process.env.TWILIO_AUTH_TOKE),
-        TWILIO_ACCOUNT_ID: JSON.stringify(process.env.TWILIO_ACCOUNT_ID),
       },
     }),
   ],
