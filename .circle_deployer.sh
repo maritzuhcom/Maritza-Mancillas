@@ -3,4 +3,4 @@ npm i &&
 npm i --only=dev &&
 npm run build &&
 sudo npm i -g forever &&
-TWILIO_ACCOUNT_ID=$TWILIO_ACCOUNT_ID TWILIO_AUTH_TOKEN=$TWILIO_AUTH_TOKEN NODE_ENV=production PORT=80 forever start build/bundle
+TWILIO_ACCOUNT_ID=$TWILIO_ACCOUNT_ID TWILIO_AUTH_TOKEN=$TWILIO_AUTH_TOKEN NODE_ENV=production PORT=80 forever start build/bundle.js
