@@ -102,7 +102,7 @@ const IconWrapper = styled.div`
   padding-bottom: 2em;
 
   & i {
-    color: #212121;
+    color: white;
     transition: color 300ms ease-in-out;
   }
 

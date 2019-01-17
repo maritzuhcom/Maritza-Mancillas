@@ -134,7 +134,7 @@ const TitleMenuItem = styled.div`
   color: #234345;
   transition: color 300ms ease-in-out;
 
-  border-bottom: ${props => (props.underline ? '0.5px solid currentColor' : 'none')};
+  border-top: ${props => (props.underline ? '0.5px solid currentColor' : 'none')};
 
   &:hover {
     cursor: pointer;
