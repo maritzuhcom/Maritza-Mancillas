@@ -1,19 +1,10 @@
 FROM node:10
 
-# working dir
 WORKDIR /usr/src/app
 
-# install dependencies from both package.json and package-lock.json
 COPY package*.json ./
 
-# for prod RUN npm install --only=production
 RUN npm install
-
-# bundle
-# COPY . .
-
-TWILIO_AUTH_TOKEN=$TWILIO_AUTH_TOKEN
-TWILIO_ACCOUNT_ID=$TWILIO_ACCOUNT_ID
 
 ARG TWILIO_ACCOUNT_ID
 ARG TWILIO_AUTH_TOKEN
@@ -23,4 +14,4 @@ ENV TWILIO_ACCOUNT_ID=$TWILIO_ACCOUNT_ID
 EXPOSE 80
 
 # start server
-CMD ["npm", "run", "start"]
+CMD ["npm", "start"]
