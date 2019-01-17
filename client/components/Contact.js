@@ -87,33 +87,35 @@ class ContactPage extends Component {
           <Form.Group
             widths="equal"
           >
-            <Form.Input
-              fluid
-              id="form-subcomponent-shorthand-input-first-name"
-              label="FIRST NAME"
-              placeholder="First name"
-              error={firstNameError}
-              value={firstName}
-              onChange={this.onFirstNameChange}
-            />
-            <Form.Input
-              fluid
-              id="form-subcomponent-shorthand-input-last-name"
-              label="LAST NAME"
-              placeholder="Last name"
-              error={lastNameError}
-              value={lastName}
-              onChange={this.onLastNameChange}
-            />
-            <Form.Input
-              fluid
-              id="form-subcomponent-shorthand-input-email"
-              label="EMAIL"
-              placeholder="joe@schmoe.com"
-              error={emailError}
-              value={email}
-              onChange={this.onEmailChange}
-            />
+            <FormWrap>
+              <Form.Input
+                fluid
+                id="form-subcomponent-shorthand-input-first-name"
+                label="FIRST NAME"
+                placeholder="First name"
+                error={firstNameError}
+                value={firstName}
+                onChange={this.onFirstNameChange}
+              />
+              <Form.Input
+                fluid
+                id="form-subcomponent-shorthand-input-last-name"
+                label="LAST NAME"
+                placeholder="Last name"
+                error={lastNameError}
+                value={lastName}
+                onChange={this.onLastNameChange}
+              />
+              <Form.Input
+                fluid
+                id="form-subcomponent-shorthand-input-email"
+                label="EMAIL"
+                placeholder="joe@schmoe.com"
+                error={emailError}
+                value={email}
+                onChange={this.onEmailChange}
+              />
+            </FormWrap>
           </Form.Group>
           <Form.TextArea
             label="MESSAGE"
@@ -174,6 +176,14 @@ const FormWrapper = styled.section`
   && textarea {
     resize: none;
   }
+
+  @media (max-width: 430px) {
+    height: -webkit-fill-available;
+    width: 23em;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+  }
 `;
 
 const ContactTitle = styled.div`
@@ -181,4 +191,11 @@ const ContactTitle = styled.div`
   padding-bottom: 1.5em;
   display: flex;
   justify-content: center;
+`;
+
+const FormWrap = styled.div`
+  @media (max-width: 430px) {
+    width: 20em;
+    height: auto;
+  }
 `;

@@ -65,7 +65,12 @@ const NameTitle = styled.div`
     align-items: center;
     letter-spacing: 3px;
     padding-top: 2em;
+
+    @media (max-width: 430px) {
+      font-size: 25px
+    }
   }
+
 `;
 
 const AboutMeParagraph = styled.div`
@@ -86,6 +91,12 @@ const AboutMeParagraph = styled.div`
     line-height: 25px;
     font-weight: 100;
   }
+
+  @media (max-width: 430px) {
+    height: auto;
+    width: auto;
+    padding: 1em;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -96,6 +107,11 @@ const ImageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @media (max-width: 430px) {
+    width: 20em;
+    height: 16em;
+  }
 `;
 
 const DivImg = styled.div`

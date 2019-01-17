@@ -17,4 +17,6 @@ class Home extends Component {
 
 export default Home;
 
-const Main = styled.main``;
+const Main = styled.main`
+
+`;
