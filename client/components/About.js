@@ -66,7 +66,7 @@ const NameTitle = styled.div`
     letter-spacing: 3px;
     padding-top: 2em;
 
-    @media (max-width: 430px) {
+    @media (max-width: 490px) {
       font-size: 25px
     }
   }
@@ -92,7 +92,7 @@ const AboutMeParagraph = styled.div`
     font-weight: 100;
   }
 
-  @media (max-width: 430px) {
+  @media (max-width: 490px) {
     height: auto;
     width: auto;
     padding: 1em;
@@ -108,7 +108,7 @@ const ImageWrapper = styled.div`
   align-items: center;
   flex-direction: column;
 
-  @media (max-width: 430px) {
+  @media (max-width: 490px) {
     width: 20em;
     height: 16em;
   }

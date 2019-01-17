@@ -177,9 +177,8 @@ const FormWrapper = styled.section`
     resize: none;
   }
 
-  @media (max-width: 430px) {
+  @media (max-width: 490px) {
     height: -webkit-fill-available;
-    width: 23em;
     display: flex;
     flex-direction: column;
     padding: 1em;
@@ -194,7 +193,7 @@ const ContactTitle = styled.div`
 `;
 
 const FormWrap = styled.div`
-  @media (max-width: 430px) {
+  @media (max-width: 490px) {
     width: 20em;
     height: auto;
   }
