@@ -161,7 +161,7 @@ const Projects = styled.div`
 `;
 
 const ProjectList = styled.div`
-  width: 80%;
+  width: auto;
   height: 14em;
   display: flex;
   flex-direction: row;

@@ -15,4 +15,7 @@ class Home extends Component {
 
 export default Home;
 
-const Main = styled.main``;
+const Main = styled.main`
+  @media (max-width: 490px) {
+  }
+`;

@@ -7,28 +7,29 @@ import PropTypes from 'prop-types';
 
 
 class Header extends Component {
+  renderPopupBasic = () => (
+    <Popup
+      trigger={(
+        <Link to="/">
+          <NameTitle id="test">
+            MM
+          </NameTitle>
+        </Link>
+      )}
+      position="bottom right"
+      inverted
+      content="Maritza Mancillas"
+      basic
+    />
+  );
+
   render() {
     const { location } = this.props;
     const { pathname } = location;
-    const PopupBasic = () => (
-      <Popup
-        trigger={(
-          <Link to="/">
-            <NameTitle id="test">
-              MM
-            </NameTitle>
-          </Link>
-        )}
-        position="bottom right"
-        inverted
-        content="Maritza Mancillas"
-        basic
-      />
-    );
     return (
       <MainHeader>
         <HeaderSection>
-          <PopupBasic />
+          {this.renderPopupBasic()}
 
         </HeaderSection>
 
