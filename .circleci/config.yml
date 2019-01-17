@@ -35,5 +35,4 @@ jobs:
       - run:
           name: Run docker container
           command: |
-            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "cd /root/home/circleci/Maritza-Mancillas/ &&
-            ./.circle_deployer.sh""
+            ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "cd /root/home/circleci/Maritza-Mancillas/ && ./.circle_deployer.sh""
