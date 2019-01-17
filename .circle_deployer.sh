@@ -2,7 +2,6 @@ rm -rf /node_modules
 npm i
 npm i --only=dev
 npm run build
-exec bash
 export NODE_ENV=production
 echo "****variables****"
 echo $TWILIO_ACCOUNT_ID
