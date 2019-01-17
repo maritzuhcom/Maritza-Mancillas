@@ -35,7 +35,7 @@ class MiddleContent extends Component {
               Hi, I'm Maritza Mancillas - a LA-based, Front End Developer.
               <br />
               <br />
-              Here are a few projects I have done on my spare time.
+              and here are a few projects I have done on my spare time.
             </span>
           </Intro>
 
