@@ -36,6 +36,8 @@ jobs:
           name: Run docker container on Digital Ocean
           command: |
             ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_HOST "cd /root/home/circleci/Maritza-Mancillas/ &&
+              echo "TWILIO_AUTH_TOKEN: $TWILIO_AUTH_TOKEN" &&
+              echo "TWILIO_ACCOUNT_ID: $TWILIO_ACCOUNT_ID" &&
               export TWILIO_AUTH_TOKEN &&
               export TWILIO_ACCOUNT_ID &&
               ./.circle_deployer.sh"
